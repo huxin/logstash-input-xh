@@ -27,17 +27,11 @@ class LogStash::Inputs::XH < LogStash::Inputs::Base
     @host = Socket.gethostname
   end # def register
 
-  def run(queue)
-    # we can abort the loop if stop? becomes true
-    while !stop?
+   def run(queue)
+    Stud.interval(@interval) do
       event = LogStash::Event.new("message" => @message, "host" => @host)
       decorate(event)
       queue << event
-      # because the sleep interval can be big, when shutdown happens
-      # we want to be able to abort the sleep
-      # Stud.stoppable_sleep will frequently evaluate the given block
-      # and abort the sleep(@interval) if the return value is true
-      Stud.stoppable_sleep(@interval) { stop? }
     end # loop
   end # def run
 
