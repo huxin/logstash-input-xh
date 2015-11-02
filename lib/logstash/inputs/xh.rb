@@ -8,8 +8,8 @@ require "socket" # for Socket.gethostname
 #
 # This plugin is intented only as an example.
 
-class LogStash::Inputs::Example < LogStash::Inputs::Base
-  config_name "example"
+class LogStash::Inputs::XH < LogStash::Inputs::Base
+  config_name "xh"
 
   # If undefined, Logstash will complain, even if codec is unused.
   default :codec, "plain"
