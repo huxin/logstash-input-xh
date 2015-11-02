@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
-  s.name = 'logstash-input-example'
+  s.name = 'logstash-input-xh'
   s.version         = '2.0.3'
   s.licenses = ['Apache License (2.0)']
   s.summary = "This example input streams a string at a definable interval."
   s.description = "This gem is a logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/plugin install gemname. This gem is not a stand-alone program"
-  s.authors = ["Elastic"]
-  s.email = 'info@elastic.co'
+  s.authors = ["X.H."]
+  s.email = 'xh@ming.com'
   s.homepage = "http://www.elastic.co/guide/en/logstash/current/index.html"
   s.require_paths = ["lib"]
 
